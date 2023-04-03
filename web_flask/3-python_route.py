@@ -30,9 +30,9 @@ def display_text(text):
     text = text.replace('_', ' ')
     return f'C {text}'
 
-
-@app.route("/python/<text>", strict_slashes=False)
-def display_py_text(text="is cool"):
+@app.route("/python", strict_slashes=False)
+@app.route("/python/<text>")
+def display_py_text(text='is cool'):
     """function that display “Python ”, followed by the value of the text
        variable (replace underscore _ symbols with a space )
     """
